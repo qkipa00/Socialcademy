@@ -9,7 +9,6 @@ import Foundation
 
 @MainActor
 @dynamicMemberLookup
-
 class FormViewModel<Value>: ObservableObject {
     typealias Action = (Value) async throws -> Void
     
@@ -19,7 +18,7 @@ class FormViewModel<Value>: ObservableObject {
     
     subscript<T>(dynamicMember keyPath: WritableKeyPath<Value, T>) -> T {
         get { value[keyPath: keyPath] }
-        set { value[keyPath: keyPath] = newValue}
+        set { value[keyPath: keyPath] = newValue }
     }
     
     private let action: Action

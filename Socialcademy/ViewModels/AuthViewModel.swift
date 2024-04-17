@@ -9,15 +9,21 @@ import Foundation
 
 @MainActor
 class AuthViewModel: ObservableObject {
-    @Published var isAuthenticated = false
-    
+    @Published var user: User?
     
     private let authService = AuthService()
     
     init() {
-        authService.$isAuthenticated.assign(to: &$isAuthenticated)
+        authService.$user.assign(to: &$user)
     }
     
+    func makeSignInViewModel() -> SignInViewModel {
+        return SignInViewModel(action: authService.signIn(email:password:))
+    }
+    
+    func makeCreateAccountViewModel() -> CreateAccountViewModel {
+        return CreateAccountViewModel(action: authService.createAccount(name:email:password:))
+    }
 }
 
 extension AuthViewModel {
@@ -31,13 +37,5 @@ extension AuthViewModel {
         convenience init(action: @escaping Action) {
             self.init(initialValue: (name: "", email: "", password: ""), action: action)
         }
-    }
-    
-    func makeSignInViewModel() -> SignInViewModel {
-        return SignInViewModel(action: authService.signIn(email: password:))
-    }
-    
-    func makeCreateAccountViewModel() -> CreateAccountViewModel {
-        return CreateAccountViewModel(action: authService.createAccount(name:email:password:))
     }
 }

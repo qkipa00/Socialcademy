@@ -22,7 +22,7 @@ struct EmptyListView: View {
             if let retryAction = retryAction {
                 Button(action: retryAction) {
                     Text("Try Again")
-                        .padding()
+                        .padding(10)
                         .background(RoundedRectangle(cornerRadius: 5).stroke(Color.secondary))
                 }
                 .padding(.top)
@@ -44,6 +44,7 @@ struct EmptyListView_Previews: PreviewProvider {
         )
         EmptyListView(
             title: "No Posts",
-            message: "There aren't any posts yet.")
+            message: "There aren't any posts yet."
+        )
     }
 }

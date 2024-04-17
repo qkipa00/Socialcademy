@@ -11,8 +11,9 @@ struct AuthView: View {
     @StateObject var viewModel = AuthViewModel()
     
     var body: some View {
-        if viewModel.isAuthenticated {
+        if let user = viewModel.user {
             MainTabView()
+                .environmentObject(ViewModelFactory(user: user))
         } else {
             NavigationView {
                 SignInForm(viewModel: viewModel.makeSignInViewModel()) {
@@ -78,15 +79,15 @@ private extension AuthView {
 }
 
 private extension AuthView {
-    struct Form<Content: View, Footer: View>: View {
-        @ViewBuilder let content: () -> Content
+    struct Form<Fields: View, Footer: View>: View {
+        @ViewBuilder let fields: () -> Fields
         @ViewBuilder let footer: () -> Footer
         
         var body: some View {
             VStack {
                 Text("Socialcademy")
                     .font(.title.bold())
-                content()
+                fields()
                     .padding()
                     .background(Color.secondary.opacity(0.15))
                     .cornerRadius(10)
