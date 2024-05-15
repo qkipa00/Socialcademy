@@ -56,7 +56,7 @@ struct PostsRepositoryStub: PostsRepositoryProtocol {
 
 struct PostsRepository: PostsRepositoryProtocol {
     let user: User
-    let postsReference = Firestore.firestore().collection("posts_v2")
+    let postsReference = Firestore.firestore().collection("posts_v3")
     let favoritesReference = Firestore.firestore().collection("favorites")
     
     func fetchAllPosts() async throws -> [Post] {
@@ -140,29 +140,5 @@ private extension Post {
 }
 
 
-private extension DocumentReference {
-    func setData<T: Encodable>(from value: T) async throws {
-        return try await withCheckedThrowingContinuation { continuation in
-            // Method only throws if there’s an encoding error, which indicates a problem with our model.
-            // We handled this with a force try, while all other errors are passed to the completion handler.
-            try! setData(from: value) { error in
-                if let error = error {
-                    continuation.resume(throwing: error)
-                    return
-                }
-                continuation.resume()
-            }
-        }
-    }
-}
 
-
-private extension Query {
-    func getDocuments<T: Decodable>(as type: T.Type) async throws -> [T] {
-        let snapshot = try await getDocuments()
-        return snapshot.documents.compactMap { document in
-            try! document.data(as: type)
-        }
-    }
-}
 
