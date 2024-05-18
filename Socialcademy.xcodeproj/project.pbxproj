@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		842132182BCC598300FD7D15 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842132172BCC598300FD7D15 /* User.swift */; };
+		8430C7032BF75CF4007B42DF /* StorageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430C7022BF75CF4007B42DF /* StorageFile.swift */; };
+		8430C7052BF75FA2007B42DF /* ImagePickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430C7042BF75FA2007B42DF /* ImagePickerButton.swift */; };
 		843D8DDB2BCD8EEC005A189F /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D8DDA2BCD8EEC005A189F /* ViewModelFactory.swift */; };
 		8440829F2BC5841300E222DE /* SocialcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440829E2BC5841300E222DE /* SocialcademyApp.swift */; };
 		844082A32BC5841400E222DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844082A22BC5841400E222DE /* Assets.xcassets */; };
@@ -29,6 +31,7 @@
 		84988EBE2BCBDF1800C003D6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988EBD2BCBDF1800C003D6 /* ProfileView.swift */; };
 		84988EC02BCBE58700C003D6 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988EBF2BCBE58700C003D6 /* FormViewModel.swift */; };
 		84988EC82BCC1DB500C003D6 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988EC72BCC1DB500C003D6 /* PrimaryButtonStyle.swift */; };
+		84DB509E2BF6627C0043E0B2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 84DB509D2BF6627C0043E0B2 /* FirebaseStorage */; };
 		84DD5D8E2BC6912B000A0669 /* NewPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD5D8D2BC6912B000A0669 /* NewPostForm.swift */; };
 		84DD5D912BC6ACCB000A0669 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD5D902BC6ACCB000A0669 /* PostsViewModel.swift */; };
 		84DD5D942BC6B41A000A0669 /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD5D932BC6B41A000A0669 /* PostsRepository.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		842132172BCC598300FD7D15 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8430C7022BF75CF4007B42DF /* StorageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFile.swift; sourceTree = "<group>"; };
+		8430C7042BF75FA2007B42DF /* ImagePickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerButton.swift; sourceTree = "<group>"; };
+		8430C7062BF9075A007B42DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		843D8DDA2BCD8EEC005A189F /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		8440829B2BC5841300E222DE /* Socialcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socialcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8440829E2BC5841300E222DE /* SocialcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialcademyApp.swift; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 				844082AE2BC5862100E222DE /* FirebaseAnalytics in Frameworks */,
 				844082B02BC5862100E222DE /* FirebaseFirestore in Frameworks */,
 				844082B22BC5862100E222DE /* FirebaseFirestoreSwift in Frameworks */,
+				84DB509E2BF6627C0043E0B2 /* FirebaseStorage in Frameworks */,
 				84988EB52BCBCC8400C003D6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +105,7 @@
 		8440829D2BC5841300E222DE /* Socialcademy */ = {
 			isa = PBXGroup;
 			children = (
+				8430C7062BF9075A007B42DF /* Info.plist */,
 				8440829E2BC5841300E222DE /* SocialcademyApp.swift */,
 				84988EB62BCBCDB900C003D6 /* Services */,
 				84DD5D952BC6D32A000A0669 /* Utilities */,
@@ -190,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				84DD5D962BC6D34B000A0669 /* Loadable.swift */,
+				8430C7022BF75CF4007B42DF /* StorageFile.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 				84DD5D992BC6DB7C000A0669 /* EmptyListView.swift */,
 				846E97EB2BC835AA0056413A /* Alert+Error.swift */,
 				84988EC72BCC1DB500C003D6 /* PrimaryButtonStyle.swift */,
+				8430C7042BF75FA2007B42DF /* ImagePickerButton.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -225,6 +235,7 @@
 				844082AF2BC5862100E222DE /* FirebaseFirestore */,
 				844082B12BC5862100E222DE /* FirebaseFirestoreSwift */,
 				84988EB42BCBCC8400C003D6 /* FirebaseAuth */,
+				84DB509D2BF6627C0043E0B2 /* FirebaseStorage */,
 			);
 			productName = Socialcademy;
 			productReference = 8440829B2BC5841300E222DE /* Socialcademy.app */;
@@ -289,9 +300,11 @@
 				844082B92BC58AD800E222DE /* Post.swift in Sources */,
 				8440829F2BC5841300E222DE /* SocialcademyApp.swift in Sources */,
 				84DD5D942BC6B41A000A0669 /* PostsRepository.swift in Sources */,
+				8430C7032BF75CF4007B42DF /* StorageFile.swift in Sources */,
 				84DD5D912BC6ACCB000A0669 /* PostsViewModel.swift in Sources */,
 				844082BD2BC58E2B00E222DE /* PostRow.swift in Sources */,
 				84988EB82BCBCE4B00C003D6 /* AuthService.swift in Sources */,
+				8430C7052BF75FA2007B42DF /* ImagePickerButton.swift in Sources */,
 				84DD5D972BC6D34B000A0669 /* Loadable.swift in Sources */,
 				84988EBE2BCBDF1800C003D6 /* ProfileView.swift in Sources */,
 				844082BB2BC58C7100E222DE /* PostsList.swift in Sources */,
@@ -440,6 +453,9 @@
 				DEVELOPMENT_TEAM = QB9WG2GGL2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Socialcademy/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -470,6 +486,9 @@
 				DEVELOPMENT_TEAM = QB9WG2GGL2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Socialcademy/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -543,6 +562,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 844082AC2BC5862100E222DE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		84DB509D2BF6627C0043E0B2 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 844082AC2BC5862100E222DE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
