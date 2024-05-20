@@ -11,7 +11,8 @@ struct PostRow: View {
     @ObservedObject var viewModel: PostRowViewModel
     
     @State private var showConfirmationDialog = false
-  
+    
+    @EnvironmentObject private var factory: ViewModelFactory
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -67,9 +68,13 @@ private extension PostRow {
             NavigationLink {
                 PostsList(viewModel: factory.makePostsViewModel(filter: .author(author)))
             } label: {
-                Text(author.name)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+                HStack {
+                    ProfileImage(url: author.imageURL)
+                        .frame(width: 32, height: 32)
+                    Text(author.name)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                }
             }
         }
     }
